@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Clock</title>
+    <style>
+        .clock {
+            font-size: 50px;
+            font-family: monospace;
+            text-align: center;
+        }
+        .hours {
+            color: red;
+        }
+        .minutes {
+            color: green;
+        }
+
+        .seconds {
+            color: blue;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div id="clock" class="clock">
+        <span id="hours" class="hours">00</span> :
+        <span id="minutes" class="minutes">00</span> :
+        <span id="seconds" class="seconds">00</span>
+    </div>
+      
+    <script>
+        function updateTime() {
+            const now = new Date();
+            const hours = now.getHours();
+            const minutes = now.getMinutes();
+            const seconds = now.getSeconds();
+            document.getElementById("hours").innerHTML = addLeadingZero(hours);
+            document.getElementById("minutes").innerHTML = addLeadingZero(minutes);
+            document.getElementById("seconds").innerHTML = addLeadingZero(seconds);
+        }
+
+        function addLeadingZero(number) {
+        return (number < 10 ? "0" : "") + number;
+        }
+
+        setInterval(updateTime, 100);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!-- 
+    3. Create a form to take following inputs using HTML only: 
+        a. Full name 
+        b. Address 
+        c. Email (Proper email validation is required) 
+        d. Gender 
+        e. Contact number 
+        f. Citizenship number 
+        g. Father’s name 
+
+        The form must contain a submit button and validate using javascript. 
+        A reset button must also be added to clear all the input values. Proper 
+        validation messages must be displayed to the user. 
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <style>
+        span{
+            display: none;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        function validate(event) {
+            event.preventDefault();
+            const name = document.getElementById('fullName').value;
+            const address = document.getElementById('address').value;
+            const email = document.getElementById('email').value;
+            const gender = document.myform.gender;
+            var validGender = false;
+            for(var i=0; i<gender.length; i++) {
+                if(gender[i].checked){
+                    validGender = true;
+                    break;
+                }
+            }
+            
+            const phone = document.getElementById('phone').value;
+            const citizenshipId = document.getElementById('cid').value;
+            const fatherName = document.getElementById('fname').value;
+
+            if(!name) {
+                document.getElementById('msg-name').style.display = 'block';
+            }
+
+            if(!address) {
+                document.getElementById('msg-add').style.display = 'block';
+            }
+
+            if(!email) {
+                document.getElementById('msg-email').style.display = 'block';
+            }
+
+            if(!validGender) {
+                document.getElementById('msg-gender').style.display = 'block';
+            }
+
+            if(!phone) {
+                document.getElementById('msg-phone').style.display = 'block';
+            }
+
+            if(!citizenshipId) {
+                document.getElementById('msg-cid').style.display = 'block';
+            }
+            if(!fatherName) {
+                document.getElementById('msg-fname').style.display = 'block';
+            }
+
+        }
+    </script>
+    <form name="myform" method="post" onsubmit="validate(event)">
+        <fieldset>
+            <legend>Form</legend>
+                Full Name: <input type="text" placeholder="Enter Your Full Name" id="fullName"> <br>
+                <span id="msg-name">*Please enter your full name<br></span><br>    
+
+                Address: <input type="text" placeholder="Enter your address" id="address"> <br>
+                <span id="msg-add">*Please enter your address <br></span><br> 
+
+                Email : <input type="email" name="email" id="email" placeholder="Enter your email"> <br>
+                <span id="msg-email">*Please enter your email address<br></span><br> 
+
+                Gender :
+                <input type="radio" name="gender" id="male">Male
+                <input type="radio" name="gender" id="female">Female <br>
+                <span id="msg-gender">*Please choose your gender<br></span><br> 
+
+                Contact Number: <input type="tel" name="phone" id="phone" placeholder="Enter your contact number"> <br>
+                <span id="msg-phone">*Please enter your contact number<br></span><br> 
+
+                Citizenship Number: <input type="text" name="cid" id="cid" placeholder="Enter your citizenship number"> <br>
+                <span id="msg-cid">*Please enter your citizenship number<br></span><br> 
+
+                Father's Name: <input type="text" name="Fname" id="fname" placeholder="Enter your Father’s Name"> <br>
+                <span id="msg-fname">*Please enter your Father's Name<br></span><br> 
+
+                <input type="submit" value="Submit">
+                <input type="reset" value="Reset">
+        </fieldset>
+    </form>
+</body>
+
+</html>

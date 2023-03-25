@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cookie Example</title>
+  </head>
+  <body>
+    <script>
+        function setCookie() {
+            const cookieName = "name";
+            const cookieValue = "Saurab Tharu";
+            document.cookie = `${cookieName}=${cookieValue}`;
+        }
+        function getCookie(){
+            if(!document.cookie){
+                document.getElementById('cookieValue').innerHTML = "Sorry, Cookie is no avaiable";
+            }else{
+                var cookie = document.cookie;
+                document.getElementById('cookieValue').innerHTML = `Cookie: ${cookie}`;
+            }
+        }
+    </script>
+
+    <h1 id="cookieValue"></h1>
+    <button onclick="setCookie()">Set Cookie</button>
+    <button onclick="getCookie()">Get Cookie</button>
+  </body>
+</html>

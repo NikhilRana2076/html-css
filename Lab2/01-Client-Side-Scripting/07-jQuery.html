@@ -1,0 +1,30 @@
+<!-- 
+    7. Write a program to alert if the input number is even or odd using jQuery. The input should be taken from a user via input field. 
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Odd even jQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+<body>
+
+    <script>
+            $(document).ready(function() {
+                $("#check").click(function(){
+                    const number = $("#num").val();
+                    if(number%2==0) {
+                        alert(`${number} is even.`);
+                    }else{
+                        alert(`${number} is odd.`);
+                    }
+                });
+            });
+    </script>
+
+    Nummber: <input type="text" name="number" id="num">
+    <br>
+    <button id="check">Check </button>
+</body>
+</html>

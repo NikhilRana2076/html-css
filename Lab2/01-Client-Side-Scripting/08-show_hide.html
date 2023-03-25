@@ -1,0 +1,37 @@
+<!-- 
+    Write a program to show/hide a paragraph when a button is clicked using jQuery. 
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Show hide paragraph</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <script>
+        $(document).ready(function(){
+            $("#show").click(function(){
+                $("#paragraph").show();
+            });
+
+            $("#hide").click(function() {
+                $("#paragraph").hide();
+            })
+        });
+    </script>
+    <p id="paragraph">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio ab sapiente fugiat repellendus voluptate delectus
+        at officia ad, debitis culpa neque atque sequi distinctio adipisci ipsam. Nam ab eius molestiae. Lorem ipsum
+        dolor sit amet consectetur adipisicing elit. Molestiae eligendi tenetur voluptates perspiciatis? Assumenda ex
+        in, harum quia minus deleniti asperiores nisi voluptatem eveniet ea consequatur dolorem aliquid laborum
+        adipisci!
+    </p>
+    <button id="show">Show</button>
+    <button id="hide">Hide</button>
+</body>
+
+</html>
